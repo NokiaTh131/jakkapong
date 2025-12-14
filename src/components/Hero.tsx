@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import portfolioData from '../data.json';
@@ -6,6 +7,27 @@ import { PortfolioData } from '../types';
 export function Hero() {
   const data: PortfolioData = portfolioData as unknown as PortfolioData;
   const { profile } = data;
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    const text = profile.name;
+    let currentIndex = 0;
+    let timeoutId: NodeJS.Timeout;
+
+    setDisplayedText("");
+
+    const typeChar = () => {
+      if (currentIndex < text.length) {
+        setDisplayedText(text.slice(0, currentIndex + 1));
+        currentIndex++;
+        timeoutId = setTimeout(typeChar, 100);
+      }
+    };
+
+    timeoutId = setTimeout(typeChar, 700);
+
+    return () => clearTimeout(timeoutId);
+  }, [profile.name]);
 
   const images = import.meta.glob('../assets/*.{png,jpg,jpeg,svg,webp}', { eager: true });
 
@@ -46,14 +68,17 @@ export function Hero() {
             Hi, my name is
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mb-4 text-4xl md:text-6xl font-bold tracking-tight uppercase "
+          <h1
+            className="mb-4 text-4xl md:text-6xl font-bold tracking-tight uppercase min-h-[1.5em]"
           >
-            {profile.name}
-          </motion.h1>
+            {displayedText}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
+              className="inline-block w-1 h-[0.8em] bg-current ml-1 align-baseline"
+            />
+          </h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
