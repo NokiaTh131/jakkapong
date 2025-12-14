@@ -1,0 +1,223 @@
+{
+  "profile": {
+    "name": "Jakkapong Jinasen",
+    "title": "Software Developer | FullStack Developer",
+    "tagline": "I am a new grad student in the Computer Engineering Department at ChiangMai University, ChiangMai, Thailand. I am passionate about learning and exploring new technologies.",
+    "image": "src/assets/me.jpg",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/jakkapong-jinasen-a67384194",
+      "github": "https://github.com/NokiaTh131",
+      "jobsdb": "https://th.jobsdb.com/profiles/jakkapong-jinasen-Lrr15F8C88"
+    },
+    "sub_tagline": "Bridging the gap between robust software development and cybersecurity to deliver secure, intelligent, and scalable applications.",
+    "resume_url": "https://drive.google.com/file/d/1mPXDQu5uaeqqvkHne2fdBVteXLCvFVCf/view?usp=sharing",
+    "email": "nokiath131@gmail.com"
+  },
+  "about": {
+    "bio": [
+      "I am a Bachelor of Engineering student in Computer Engineering (Cybersecurity Track) at Chiang Mai University, expecting to graduate in 2026. Through college activity and learning, I have experiences of working with teams and learn to manage work schedule.",
+      "I have a strong foundation in software development, ranging from Full-Stack web development to Machine Learning and DevOps. My technical expertise includes building high-traffic systems, implementing security best practices, and working with modern cloud technologies.",
+      "I am a developer who thrives on the cutting edge. I actively experiment with emerging technologies such as diving into ChatGPT the moment they launched using every personal project as an opportunity to master new stacks. However, I bring a pragmatic mindset to production environments. My goal is to select the right tools for the job, balancing technical innovation with practicality to ensure stability and efficiency without unnecessary complexity.",
+      "Currently, news about services being hacked is on the rise. I foresaw this trend even as Vibe-Coding was becoming popular, which motivated me to choose the Cybersecurity track in my Computer Engineering major. This education has equipped me with the skills to identify vulnerabilities, manage security incidents, and prevent future attacks.",
+      "I frequently take the lead on projects, managing workflows and driving team success. With experience across a wide range of technologies, I specialize in making strategic technical decisions selecting the most appropriate tools and stacks to meet each project's unique goals."
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering: Computer Engineering (Cybersecurity Track)",
+        "school": "Chiang Mai University",
+        "grade": 3.67,
+        "date": "2022-2026",
+        "location": "ChiangMai, ChiangMai"
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Ranked Top 50 in AIS JUMP Thailand Hackathon 2025.",
+        "description": "Developed Pun Plook, a solution enabling aging farmers to easily access IoT smart-farm features. Led the design and implementation planning of the Smart Pot system integrated with AIS IoT."
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "CAS COGNISER (THAILAND) CO., LTD",
+      "role": "Software Developer Intern",
+      "location": "ChiangMai, Thailand",
+      "date": "April 7 - June 13, 2025",
+      "points": [
+        "Built a lightweight, event-driven backend using JavaScript/Node.js to process continuous camera detection streams from over 20 concurrent sources. Integrated this pipeline with a custom Discord Bot, ensuring instant, low-latency alerts for the internal operations team.",
+        "Architected and maintained a core internal library designed to abstract third-party API integrations. This utility standardized code usage across the organization, significantly reducing development time and code redundancy for other engineering teams.",
+        "Refactored the media transmission pipeline to handle high throughput image data. Implemented optimization strategies that improved system scalability while achieving a tangible reduction in cloud storage and bandwidth costs.",
+        "Perform penetration testing on hosting servers. Successfully identified critical vulnerabilities, authored a comprehensive remediation report, and collaborated with the team to patch security gaps and harden the infrastructure against attacks."
+      ],
+      "logo": "src/assets/logo_cas_cogniser.png"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Malicious DNS Detection System",
+      "description": "Cybersecurity platform using Machine Learning to detect network threats in real-time across ChiagMai university infrastructure.",
+      "role": "Full-Stack Developer & ML Engineer",
+      "links": [],
+      "points": [
+        "Engineered a high-performance cybersecurity platform using Golang, Kafka, and ClickHouse to process 100M+ daily events with sub-second latency, achieving 89% accuracy in threat detection via a custom ML pipeline and streamlining SOC investigations through a real-time dashboard."
+      ],
+      "image": "src/assets/ddd.png"
+    },
+    {
+      "name": "Exam Shedoo",
+      "description": "A university exam scheduling and management platform with automated data synchronization.",
+      "role": "Full-Stack Developer (Backend Lead)",
+      "links": [
+        "https://github.com/NokiaTh131/exam-shedoo-backend",
+        "https://github.com/maimeetang/exam-shedoo-frontend"
+      ],
+      "points": [
+        "Architected a comprehensive exam scheduling platform using Go (Fiber), PostgreSQL, and Redis, featuring automated data synchronization via Python scrapers and a responsive Next.js frontend that handles complex scheduling logic and document processing for university administration."
+      ],
+      "image": "src/assets/exam-shedoo.png"
+    },
+    {
+      "name": "Medical Examination System",
+      "description": "A comprehensive system for managing clinical examinations, patient records, and digital prescriptions.",
+      "role": "Full-Stack Developer (Backend Lead)",
+      "links": [
+        "https://github.com/NokiaTh131/medical_examination",
+        "https://github.com/nathapatt/frontMex"
+      ],
+      "points": [
+        "Developed a robust medical management system using Node.js, Prisma, and PostgreSQL, integrating MinIO for secure document storage and Swagger for API documentation, featuring automated appointment scheduling and advanced clinical tools like digital prescriptions and interactive wound sketching."
+      ],
+      "image": "src/assets/mex.png"
+    },
+    {
+      "name": "Project Workflow Application",
+      "description": "A developer-centric project management platform bridging task tracking with version control.",
+      "role": "Full-Stack Developer",
+      "links": [
+        "https://github.com/NokiaTh131/ProjectFlow-backend",
+        "https://github.com/NokiaTh131/ProjectFlow"
+      ],
+      "points": [
+        "Built a developer-centric project management tool bridging task tracking with version control, featuring a Next.js frontend with embedded code editing and a Spring Boot backend that synchronizes real-time development progress via the GitHub API."
+      ],
+      "image": "src/assets/projectflow.png"
+    },
+    {
+      "name": "Collaborative Whiteboard",
+      "description": "Real-time visual collaboration platform allowing users to draw, edit, and share whiteboards simultaneously.",
+      "role": "Full-Stack Developer",
+      "links": [
+        "https://github.com/NokiaTh131/whiteboard-with-collaboration"
+      ],
+      "points": [
+        "Created a real-time collaborative whiteboard using NestJS and WebSockets for low-latency state synchronization, coupled with a Next.js frontend capable of rendering complex vector graphics and supporting secure multi-user interaction via MongoDB."
+      ],
+      "image": "src/assets/draw2.png"
+    },
+    {
+      "name": "PDF Chat (RAG Application)",
+      "description": "AI-powered document analysis tool enabling natural language queries on PDF files using Retrieval-Augmented Generation.",
+      "role": "Full-Stack Developer",
+      "links": [
+        "https://github.com/NokiaTh131/PDF_Chat"
+      ],
+      "points": [
+        "Engineered an AI-powered document analysis tool using LangChain and FAISS for RAG-based retrieval, leveraging Groq's Llama-3 engine to deliver instant, context-aware answers from PDF documents through an interactive Streamlit interface."
+      ],
+      "image": "src/assets/pdfchat.png"
+    },
+    {
+      "name": "UPBEAT (Strategic Game Engine)",
+      "description": "A multiplayer strategy game backend where players program their units using a custom scripting language.",
+      "role": "Backend Developer",
+      "links": [
+        "https://github.com/NokiaTh131/newUPBEAT"
+      ],
+      "points": [
+        "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real-time game states and concurrent turn execution across a complex hexagonal territory system."
+      ],
+      "image": "src/assets/upbeat.png"
+    },
+    {
+      "name": "Corne Keyboard Color Design",
+      "description": "Interactive 2D/3D customization tool for Corne split mechanical keyboards color design.",
+      "role": "Frontend Developer",
+      "links": [
+        "https://github.com/NokiaTh131/corne-design"
+      ],
+      "points": [
+        "Constructed an immersive 3D product configurator using React Three Fiber, enabling users to customize and visualize mechanical keyboards in real-time with robust state management for theme application and export functionality."
+      ],
+      "image": "src/assets/corne.png"
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "name": "Programming Languages",
+        "desc": "Core languages for systems and web development.",
+        "items": ["Golang", "Java", "TypeScript", "Python", "JavaScript", "HTML", "CSS"],
+        "logos": [
+          "src/assets/go.svg",
+          "src/assets/java.svg",
+          "src/assets/typescript.svg",
+          "src/assets/python.svg",
+          "src/assets/javascript.svg",
+          "src/assets/html.svg",
+          "src/assets/css.svg"
+        ]
+      },
+      {
+        "name": "Frameworks & Tools",
+        "desc": "Libraries and tools for building robust applications.",
+        "items": ["Spring Boot", "FastAPI", "React", "Next.js", "NestJs","Node.js", "Go Fiber", "Kafka"],
+        "logos": [
+          "src/assets/springboot.svg",
+          "src/assets/fastapi.svg",
+          "src/assets/react.svg",
+          "src/assets/nextjs.svg",
+          "src/assets/nestjs.svg",
+          "src/assets/nodejs.svg",
+          "src/assets/go.svg",
+          "src/assets/kafka.svg"
+        ]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "desc": "Infrastructure and deployment technologies.",
+        "items": ["Huawei Cloud", "AWS", "Azure", "Docker", "Kubernetes"],
+        "logos": [
+          "src/assets/huawei.svg",
+          "src/assets/aws.svg",
+          "src/assets/azure.svg",
+          "src/assets/docker.svg",
+          "src/assets/kubernetes.svg"
+        ]
+      },
+      {
+        "name": "Database",
+        "desc": "Data management.",
+        "items": ["MongoDB", "PostgreSQL", "Elastic Search", "MySQL", "Redis"],
+        "logos": [
+          "src/assets/mongodb.svg",
+          "src/assets/postgresql.svg",
+          "src/assets/elasticsearch.svg",
+          "src/assets/mysql.svg",
+          "src/assets/redis.svg"
+        ]
+      },
+            {
+        "name": "Cybersecurity & Networking",
+        "desc": "security protocols and networking.",
+        "items": ["Penetration Testing", "Risk Assessments", "Digital Forensics", "Network configuration", "Network Design"]
+      },
+      {
+        "name": "Languages",
+        "desc": "Communication languages.",
+        "items": ["Thai", "English"],
+        "logos": []
+      }
+
+    ]
+  }
+}

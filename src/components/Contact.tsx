@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
+import portfolioData from '../data.json';
+import { PortfolioData } from '../types';
 
 export function Contact() {
+  const data: PortfolioData = portfolioData as unknown as PortfolioData;
+  const { profile } = data;
+
   return (
     <section id="contact" className="py-20 px-6 bg-muted/30">
       <div className="max-w-4xl mx-auto">
@@ -31,55 +36,50 @@ export function Contact() {
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary/5 rounded-lg">
-                  <Mail size={20} className="text-foreground" />
+              {profile.email && (
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/5 rounded-lg">
+                    <Mail size={20} className="text-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">Email</div>
+                    <a href={`mailto:${profile.email}`} className="hover:text-muted-foreground transition-colors">
+                      {profile.email}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:alex@example.com" className="hover:text-muted-foreground transition-colors">
-                    alex@example.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary/5 rounded-lg">
-                  <MapPin size={20} className="text-foreground" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Location</div>
-                  <div>San Francisco, CA</div>
-                </div>
-              </div>
+              )}
             </div>
 
             <div className="pt-6">
               <div className="text-sm text-muted-foreground mb-4">Connect with me</div>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href={profile.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                  aria-label="GitHub"
                 >
                   <Github size={20} className="text-foreground" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href={profile.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin size={20} className="text-foreground" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href={profile.socials.jobsdb}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                  className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center"
+                   aria-label="JobsDB"
                 >
-                  <Twitter size={20} className="text-foreground" />
+                   <span className="font-bold text-xs text-foreground">JobsDB</span>
                 </a>
               </div>
             </div>
@@ -98,13 +98,27 @@ export function Contact() {
               I'm always interested in hearing about new projects and opportunities. 
               Let's create something amazing together.
             </p>
-            <Button 
-              size="lg" 
-              className="w-full md:w-auto"
-              onClick={() => window.location.href = 'mailto:alex@example.com'}
-            >
-              Send me an email
-            </Button>
+            {profile.email ? (
+               <Button 
+                size="lg" 
+                className="w-full md:w-auto"
+                onClick={() => window.location.href = `mailto:${profile.email}`}
+              >
+                Send me an email
+              </Button>
+            ) : (
+             <div className="flex gap-4">
+              <a 
+                href={profile.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+            )}
+           
           </motion.div>
         </div>
 
@@ -116,7 +130,7 @@ export function Contact() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground"
         >
-          <p>© 2024 Alex Chen. Built with React & Tailwind CSS.</p>
+          <p>© {new Date().getFullYear()} {profile.name}. Built with React & Tailwind CSS.</p>
         </motion.div>
       </div>
     </section>

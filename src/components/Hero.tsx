@@ -1,7 +1,25 @@
 import { motion } from 'motion/react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import portfolioData from '../data.json';
+import { PortfolioData } from '../types';
 
 export function Hero() {
+  const data: PortfolioData = portfolioData as unknown as PortfolioData;
+  const { profile } = data;
+
+  const images = import.meta.glob('../assets/*.{png,jpg,jpeg,svg,webp}', { eager: true });
+
+  const getImagePath = (path: string) => {
+    if (path.startsWith('http')) return path;
+    const filename = path.split('/').pop();
+    if (!filename) return path;
+    const key = `../assets/${filename}`;
+    const module = images[key] as { default: string } | undefined;
+    return module?.default || path;
+  };
+
+  const imageSrc = getImagePath(profile.image);
+
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -10,18 +28,20 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className="max-w-4xl w-full">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+        {/* Text Content */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+           initial={{ opacity: 0, x: -20 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 0.6 }}
+           className="order-2 md:order-1"
         >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 text-muted-foreground"
+            className="mb-4 text-muted-foreground font-medium"
           >
             Hi, my name is
           </motion.div>
@@ -30,29 +50,37 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="mb-4"
+            className="mb-4 text-4xl md:text-6xl font-bold tracking-tight"
           >
-            Alex Chen
+            {profile.name}
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mb-6 text-muted-foreground text-3xl"
+            className="mb-6 text-muted-foreground text-2xl md:text-3xl font-light"
           >
-            I build exceptional digital experiences
+            {profile.title}
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-muted-foreground max-w-2xl mb-8 leading-relaxed"
+            className="text-muted-foreground max-w-lg mb-8 leading-relaxed"
           >
-            I'm a full-stack software engineer specializing in building scalable web applications. 
-            Currently focused on creating accessible, human-centered products with modern technologies.
+            {profile.tagline}
           </motion.p>
+          <motion.p
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: 0.55 }}
+             className="text-muted-foreground max-w-lg mb-8 leading-relaxed italic"
+           >
+             {profile.sub_tagline}
+           </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,26 +89,36 @@ export function Hero() {
             className="flex gap-6 mb-12"
           >
             <a
-              href="https://github.com"
+              href={profile.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
             >
-              <Github size={24} />
+              <Github size={28} />
             </a>
             <a
-              href="https://linkedin.com"
+              href={profile.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
             >
-              <Linkedin size={24} />
+              <Linkedin size={28} />
             </a>
-            <a
-              href="mailto:alex@example.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+            {profile.email && (
+              <a
+                href={`mailto:${profile.email}`}
+                className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
+              >
+                <Mail size={28} />
+              </a>
+            )}
+             <a
+              href={profile.socials.jobsdb}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
             >
-              <Mail size={24} />
+              <span className="font-bold text-lg">JobsDB</span>
             </a>
           </motion.div>
 
@@ -89,16 +127,29 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
             onClick={scrollToProjects}
-            className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="group flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
           >
             <span>View my work</span>
             <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
           </motion.button>
         </motion.div>
 
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+        {/* Image Content */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+          className="order-1 md:order-2 flex justify-center relative"
+        >
+          
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl">
+             <img 
+               src={imageSrc} 
+               alt={profile.name} 
+               className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+             />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
