@@ -9,7 +9,7 @@ export function Contact() {
   const { profile } = data;
 
   return (
-    <section id="contact" className="py-20 px-6 bg-muted/30">
+    <section id="contact" className="py-20 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export function Contact() {
             {profile.email ? (
                <Button 
                 size="lg" 
-                className="w-full md:w-auto"
+                className="w-full md:w-auto bg-accent"
                 onClick={() => window.location.href = `mailto:${profile.email}`}
               >
                 Send me an email

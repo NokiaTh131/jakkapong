@@ -28,7 +28,7 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div
@@ -50,7 +50,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="mb-4 text-4xl md:text-6xl font-bold tracking-tight"
+            className="mb-4 text-4xl md:text-6xl font-bold tracking-tight uppercase "
           >
             {profile.name}
           </motion.h1>
@@ -59,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mb-6 text-muted-foreground text-2xl md:text-3xl font-light"
+            className="mb-6 text-2xl md:text-3xl font-medium italic text-primary"
           >
             {profile.title}
           </motion.div>
@@ -127,7 +127,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
             onClick={scrollToProjects}
-            className="group flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
+            className="group flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors border-b border-transparent hover:border-accent pb-1"
           >
             <span>View my work</span>
             <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
@@ -135,21 +135,18 @@ export function Hero() {
         </motion.div>
 
         {/* Image Content */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+        <div
           className="order-1 md:order-2 flex justify-center relative"
         >
           
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden">
              <img 
                src={imageSrc} 
                alt={profile.name} 
-               className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+               className="w-full h-full object-cover scale-160 ml-6"
              />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

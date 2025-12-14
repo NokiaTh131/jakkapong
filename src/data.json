@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Jakkapong Jinasen",
-    "title": "Software Developer | FullStack Developer",
+    "title": "FullStack Developer",
     "tagline": "I am a new grad student in the Computer Engineering Department at ChiangMai University, ChiangMai, Thailand. I am passionate about learning and exploring new technologies.",
     "image": "src/assets/me.jpg",
     "socials": {
@@ -17,10 +17,8 @@
     "bio": [
       "I am a Bachelor of Engineering student in Computer Engineering (Cybersecurity Track) at Chiang Mai University, expecting to graduate in 2026. Through college activity and learning, I have experiences of working with teams and learn to manage work schedule.",
       "I have a strong foundation in software development, ranging from Full-Stack web development to Machine Learning and DevOps. My technical expertise includes building high-traffic systems, implementing security best practices, and working with modern cloud technologies.",
-      "I am a developer who thrives on the cutting edge. I actively experiment with emerging technologies such as diving into ChatGPT the moment they launched using every personal project as an opportunity to master new stacks. However, I bring a pragmatic mindset to production environments. My goal is to select the right tools for the job, balancing technical innovation with practicality to ensure stability and efficiency without unnecessary complexity.",
-      "Currently, news about services being hacked is on the rise. I foresaw this trend even as Vibe-Coding was becoming popular, which motivated me to choose the Cybersecurity track in my Computer Engineering major. This education has equipped me with the skills to identify vulnerabilities, manage security incidents, and prevent future attacks.",
-      "I frequently take the lead on projects, managing workflows and driving team success. With experience across a wide range of technologies, I specialize in making strategic technical decisions selecting the most appropriate tools and stacks to meet each project's unique goals."
-    ],
+      "Currently, news about services being hacked is on the rise. I foresaw this trend even as Vibe-Coding was becoming popular, which motivated me to choose the Cybersecurity track in my Computer Engineering major. This education has equipped me with the skills to identify vulnerabilities, manage security incidents, and prevent future attacks."
+],
     "education": [
       {
         "degree": "Bachelor of Engineering: Computer Engineering (Cybersecurity Track)",

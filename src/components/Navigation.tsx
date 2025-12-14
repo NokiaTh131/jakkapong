@@ -57,7 +57,7 @@ export function Navigation() {
                 className="text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground transition-all group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
               </button>
             ))}
           </div>

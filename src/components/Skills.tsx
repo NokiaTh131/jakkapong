@@ -25,7 +25,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 px-6 bg-muted/30">
+    <section id="skills" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border rounded-lg p-6 hover:border-foreground/20 transition-colors group"
+                className="bg-card border border-border rounded-lg p-6 hover:border-foreground/30 transition-colors group"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors">
