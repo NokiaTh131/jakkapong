@@ -39,8 +39,8 @@
       "location": "ChiangMai, Thailand",
       "date": "April 7 - June 13, 2025",
       "points": [
-        "Built a lightweight, event-driven backend using JavaScript/Node.js to process continuous camera detection streams from over 20 concurrent sources. Integrated this pipeline with a custom Discord Bot, ensuring instant, low-latency alerts for the internal operations team.",
-        "Architected and maintained a core internal library designed to abstract third-party API integrations. This utility standardized code usage across the organization, significantly reducing development time and code redundancy for other engineering teams.",
+        "Built a lightweight, event-driven backend using JavaScript to process continuous camera detection streams from over 20 concurrent sources. Integrated this pipeline with a custom Discord Bot, ensuring instant, low-latency alerts for the internal operations team.",
+        "Architected and maintained a core internal library designed to abstract third party API integrations. This utility standardized code usage across the organization, significantly reducing development time and code redundancy for other engineering teams.",
         "Refactored the media transmission pipeline to handle high throughput image data. Implemented optimization strategies that improved system scalability while achieving a tangible reduction in cloud storage and bandwidth costs.",
         "Perform penetration testing on hosting servers. Successfully identified critical vulnerabilities, authored a comprehensive remediation report, and collaborated with the team to patch security gaps and harden the infrastructure against attacks."
       ],

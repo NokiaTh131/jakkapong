@@ -132,7 +132,7 @@ export function Hero() {
                     href={profile.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Github size={28} />
                   </a>
@@ -148,7 +148,7 @@ export function Hero() {
                     href={profile.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Linkedin size={28} />
                   </a>
@@ -163,7 +163,7 @@ export function Hero() {
                   <TooltipTrigger asChild>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
+                      className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Mail size={28} />
                     </a>
@@ -180,7 +180,7 @@ export function Hero() {
                     href={profile.socials.jobsdb}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <span className="font-bold text-lg">JobsDB</span>
                   </a>

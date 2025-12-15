@@ -63,7 +63,7 @@ export function Projects() {
 
                 <div className="relative z-10 flex flex-1 flex-col justify-end p-6 md:p-8">
                   <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                    <h3 className="mb-2 text-2xl font-bold text-white">
                       {project.name}
                     </h3>
                     <div className="mb-3 text-sm font-medium text-primary">
@@ -95,7 +95,7 @@ export function Projects() {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                            className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
                           >
                             {isGithub ? (
                               <Github size={20} />

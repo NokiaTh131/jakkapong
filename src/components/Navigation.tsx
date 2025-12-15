@@ -44,7 +44,7 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <motion.button
             onClick={() => scrollToSection("hero")}
-            className="text-foreground hover:text-muted-foreground transition-colors"
+            className="cursor-pointer text-foreground hover:text-muted-foreground transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -57,7 +57,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
@@ -67,7 +67,7 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,7 +86,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+                className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 {item.label}
               </button>
