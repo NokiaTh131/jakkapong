@@ -18,7 +18,7 @@
       "I am a Bachelor of Engineering student in Computer Engineering (Cybersecurity Track) at Chiang Mai University, expecting to graduate in 2026. Through college activity and learning, I have experiences of working with teams and learn to manage work schedule.",
       "I have a strong foundation in software development, ranging from Full-Stack web development to Machine Learning and DevOps. My technical expertise includes building high-traffic systems, implementing security best practices, and working with modern cloud technologies.",
       "Currently, news about services being hacked is on the rise. I foresaw this trend even as Vibe-Coding was becoming popular, which motivated me to choose the Cybersecurity track in my Computer Engineering major. This education has equipped me with the skills to identify vulnerabilities, manage security incidents, and prevent future attacks."
-],
+    ],
     "education": [
       {
         "degree": "Bachelor of Engineering: Computer Engineering (Cybersecurity Track)",
@@ -53,7 +53,7 @@
   "projects": [
     {
       "name": "Malicious DNS Detection System",
-      "description": "Cybersecurity platform using Machine Learning to detect network threats in real-time across ChiagMai university infrastructure.",
+      "description": "Cybersecurity platform using Machine Learning to detect network threats in real-time across ChiangMai university infrastructure.",
       "role": "Full-Stack Developer & ML Engineer",
       "links": [],
       "points": [
@@ -73,6 +73,16 @@
         "Architected a comprehensive exam scheduling platform using Go (Fiber), PostgreSQL, and Redis, featuring automated data synchronization via Python scrapers and a responsive Next.js frontend that handles complex scheduling logic and document processing for university administration."
       ],
       "image": "src/assets/exam-shedoo.png"
+    },
+    {
+      "name": "PDF Chat (RAG Application)",
+      "description": "AI-powered document analysis tool enabling natural language queries on PDF files using Retrieval-Augmented Generation.",
+      "role": "Full-Stack Developer",
+      "links": ["https://github.com/NokiaTh131/PDF_Chat"],
+      "points": [
+        "Engineered an AI-powered document analysis tool using LangChain and FAISS for RAG-based retrieval, leveraging Groq's Llama-4 engine to deliver instant, context-aware answers from PDF documents through an interactive Streamlit interface."
+      ],
+      "image": "src/assets/pdfchat.png"
     },
     {
       "name": "Medical Examination System",
@@ -104,33 +114,17 @@
       "name": "Collaborative Whiteboard",
       "description": "Real-time visual collaboration platform allowing users to draw, edit, and share whiteboards simultaneously.",
       "role": "Full-Stack Developer",
-      "links": [
-        "https://github.com/NokiaTh131/whiteboard-with-collaboration"
-      ],
+      "links": ["https://github.com/NokiaTh131/whiteboard-with-collaboration"],
       "points": [
         "Created a real-time collaborative whiteboard using NestJS and WebSockets for low-latency state synchronization, coupled with a Next.js frontend capable of rendering complex vector graphics and supporting secure multi-user interaction via MongoDB."
       ],
       "image": "src/assets/draw2.png"
     },
     {
-      "name": "PDF Chat (RAG Application)",
-      "description": "AI-powered document analysis tool enabling natural language queries on PDF files using Retrieval-Augmented Generation.",
-      "role": "Full-Stack Developer",
-      "links": [
-        "https://github.com/NokiaTh131/PDF_Chat"
-      ],
-      "points": [
-        "Engineered an AI-powered document analysis tool using LangChain and FAISS for RAG-based retrieval, leveraging Groq's Llama-3 engine to deliver instant, context-aware answers from PDF documents through an interactive Streamlit interface."
-      ],
-      "image": "src/assets/pdfchat.png"
-    },
-    {
       "name": "UPBEAT (Strategic Game Engine)",
       "description": "A multiplayer strategy game backend where players program their units using a custom scripting language.",
       "role": "Backend Developer",
-      "links": [
-        "https://github.com/NokiaTh131/newUPBEAT"
-      ],
+      "links": ["https://github.com/NokiaTh131/newUPBEAT"],
       "points": [
         "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real-time game states and concurrent turn execution across a complex hexagonal territory system."
       ],
@@ -140,9 +134,7 @@
       "name": "Corne Keyboard Color Design",
       "description": "Interactive 2D/3D customization tool for Corne split mechanical keyboards color design.",
       "role": "Frontend Developer",
-      "links": [
-        "https://github.com/NokiaTh131/corne-design"
-      ],
+      "links": ["https://github.com/NokiaTh131/corne-design"],
       "points": [
         "Constructed an immersive 3D product configurator using React Three Fiber, enabling users to customize and visualize mechanical keyboards in real-time with robust state management for theme application and export functionality."
       ],
@@ -154,7 +146,15 @@
       {
         "name": "Programming Languages",
         "desc": "Core languages for systems and web development.",
-        "items": ["Golang", "Java", "TypeScript", "Python", "JavaScript", "HTML", "CSS"],
+        "items": [
+          "Golang",
+          "Java",
+          "TypeScript",
+          "Python",
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ],
         "logos": [
           "src/assets/go.svg",
           "src/assets/java.svg",
@@ -168,7 +168,16 @@
       {
         "name": "Frameworks & Tools",
         "desc": "Libraries and tools for building robust applications.",
-        "items": ["Spring Boot", "FastAPI", "React", "Next.js", "NestJs","Node.js", "Go Fiber", "Kafka"],
+        "items": [
+          "Spring Boot",
+          "FastAPI",
+          "React",
+          "Next.js",
+          "NestJs",
+          "Node.js",
+          "Go Fiber",
+          "Kafka"
+        ],
         "logos": [
           "src/assets/springboot.svg",
           "src/assets/fastapi.svg",
@@ -183,10 +192,16 @@
       {
         "name": "Cloud & DevOps",
         "desc": "Infrastructure and deployment technologies.",
-        "items": ["Huawei Cloud", "AWS", "Azure", "Docker", "Kubernetes"],
+        "items": [
+          "Huawei Cloud",
+          "Google Cloud",
+          "Azure",
+          "Docker",
+          "Kubernetes"
+        ],
         "logos": [
           "src/assets/huawei.svg",
-          "src/assets/aws.svg",
+          "src/assets/gc.svg",
           "src/assets/azure.svg",
           "src/assets/docker.svg",
           "src/assets/kubernetes.svg"
@@ -204,10 +219,15 @@
           "src/assets/redis.svg"
         ]
       },
-            {
+      {
         "name": "Cybersecurity & Networking",
         "desc": "security protocols and networking.",
-        "items": ["Penetration Testing", "Risk Assessments", "Digital Forensics", "Network configuration", "Network Design"]
+        "items": [
+          "Penetration Testing",
+          "Risk Assessments",
+          "Digital Forensics",
+          "Network configuration"
+        ]
       },
       {
         "name": "Languages",
@@ -215,7 +235,6 @@
         "items": ["Thai", "English"],
         "logos": []
       }
-
     ]
   }
 }

@@ -7,7 +7,26 @@ export function Skills() {
    const data: PortfolioData = portfolioData as unknown as PortfolioData;
    const { skills } = data;
 
-  // Helper to map icon names/types if needed, or just specific icons for categories if hardcoded mapping is preferred
+  // Dynamically import images from assets folder
+  const images = import.meta.glob('../assets/*.{png,jpg,jpeg,svg,webp}', { eager: true });
+
+  const getImagePath = (path: string | undefined) => {
+    if (!path) return undefined;
+    if (path.startsWith('http')) return path;
+    const filename = path.split('/').pop();
+    if (!filename) return path;
+    const key = `../assets/${filename}`;
+    const module = images[key] as { default: string } | undefined;
+    return module?.default || path;
+  };
+
+  const getInitials = (name: string) => {
+    const parts = name.split(' ');
+    if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  };
+
+  // Helper to map icon names/types if needed
   // Since data.json doesn't have icon names, I'll map loosely based on category name or index
   const getIcon = (categoryName: string) => {
     switch (categoryName.toLowerCase()) {
@@ -58,15 +77,35 @@ export function Skills() {
                 
                 <p className="text-sm text-muted-foreground mb-4">{category.desc}</p>
 
-                <div className="flex flex-wrap gap-2">
-                  {category.items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-sm text-muted-foreground bg-background px-3 py-1 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                <div className="flex flex-wrap gap-3">
+                  {category.items.map((skill, i) => {
+                    const logoPath = category.logos?.[i];
+                    // Logic to resolve image path similar to Projects.tsx
+                    // Since we can't share the function easily without context, I'll inline a simple version or reuse if I could, but here I'll just use the glob imported at top level if I add it.
+                    // Wait, I need to add the import meta glob at the top of the component first.
+                    // Let's do the logic inside the map or helper.
+                    
+                    const resolvedLogo = logoPath ? getImagePath(logoPath) : undefined;
+                    const initials = getInitials(skill);
+
+                    return (
+                      <div
+                        key={skill}
+                        className="flex items-center gap-2 bg-background border border-border px-3 py-2 rounded-lg"
+                      >
+                         {resolvedLogo ? (
+                          <div className="w-6 h-6 flex justify-center items-center overflow-hidden rounded-sm">
+                             <img src={resolvedLogo} alt={skill} className="w-full h-full object-contain" />
+                          </div>
+                         ) : (
+                          <div className="w-6 h-6 flex justify-center items-center bg-primary/10 rounded-sm text-xs font-bold text-primary">
+                            {initials}
+                          </div>
+                         )}
+                        <span className="text-sm font-medium">{skill}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
             );

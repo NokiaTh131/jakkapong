@@ -23,7 +23,7 @@ export function Navigation() {
   };
 
   const navItems = [
-    { label: 'Work', id: 'projects' },
+    { label: 'Projects', id: 'projects' },
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
     { label: 'Contact', id: 'contact' },

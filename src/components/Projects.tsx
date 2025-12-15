@@ -38,50 +38,47 @@ export function Projects() {
           <div className="w-12 h-1 bg-foreground mb-12" />
         </motion.div>
 
-        <div className="space-y-24">
+        <div className="flex flex-col space-y-6 px-36">
           {projects.map((project, index) => {
             const imageSrc = getImagePath(project.image);
             
             return (
               <motion.div
                 key={project.name}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } gap-8 items-center`}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group flex flex-col bg-card border border-border/50 rounded-lg overflow-hidden hover:border-border transition-colors w-full"
               >
                  {/* Image */}
                  {imageSrc && (
-                  <div className="w-full md:w-1/2 relative group">
-                    <div className="relative overflow-hidden rounded-lg aspect-video border border-border/50">
-                      <img
-                        src={imageSrc}
-                        alt={project.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 duration-300" />
-                    </div>
+                  <div className="relative w-full shrink-0 border-b md:border-b-0 md:border-r border-border/50 overflow-hidden">
+                    <img
+                      src={imageSrc}
+                      alt={project.name}
+                      className="w-full h-48 md:h-86 object-cover object-top"
+                    />
                   </div>
                  )}
 
-                <div className={`w-full ${imageSrc ? 'md:w-1/2' : ''} space-y-4`}>
-                  <h3>{project.name}</h3>
-                  <p className="text-muted-foreground">{project.description}</p>
-                  <div className="text-sm font-medium text-primary">{project.role}</div>
+                <div className="flex flex-col flex-1 p-6 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
+                    <div className="text-sm font-medium text-primary mb-2">{project.role}</div>
+                    <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                    
+                    {/* Points list */}
+                    {project.points && project.points.length > 0 && (
+                      <ul className="list-disc pl-4 space-y-1 mb-4">
+                        {project.points.map((point, i) => (
+                          <li key={i} className="text-muted-foreground text-xs">{point}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                   
-                   {/* Points list from data.json if available */}
-                   {project.points && project.points.length > 0 && (
-                    <ul className="list-disc pl-5 space-y-2">
-                      {project.points.map((point, i) => (
-                        <li key={i} className="text-muted-foreground text-sm">{point}</li>
-                      ))}
-                    </ul>
-                   )}
-
-                  <div className="flex gap-4 pt-2">
+                  <div className="mt-auto pt-4 flex gap-4">
                     {project.links && project.links.map((link) => {
                       const isGithub = link.includes('github');
                       return (
@@ -90,10 +87,10 @@ export function Projects() {
                           href={link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          {isGithub ? <Github size={20} /> : <ExternalLink size={20} />}
-                          <span>{isGithub ? 'Code' : 'Live Demo'}</span>
+                          {isGithub ? <Github size={18} /> : <ExternalLink size={18} />}
+                          <span>{isGithub ? 'Code' : 'Demo'}</span>
                         </a>
                       )
                     })}
