@@ -40,47 +40,44 @@ export function Projects() {
           <div className="w-12 h-1 bg-foreground mb-12" />
         </motion.div>
 
-        <div className="flex flex-col space-y-6 md:px-24">
-          {projects.map((project, index) => {
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-3">
+          {projects.map((project) => {
             const imageSrc = getImagePath(project.image);
 
             return (
-              <motion.div
+              <div
                 key={project.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group flex flex-col bg-card border border-border/50 rounded-lg overflow-hidden hover:border-border transition-colors w-full"
+                className="group relative flex flex-col h-[500px] md:h-[600px] w-full overflow-hidden rounded-xl border border-white/10 bg-card"
               >
-                {/* Image */}
+                {/* Background Image */}
                 {imageSrc && (
-                  <div className="relative w-full shrink-0 border-b md:border-b-0 md:border-r border-border/50 overflow-hidden">
+                  <div className="absolute inset-0 z-0">
                     <img
                       src={imageSrc}
                       alt={project.name}
-                      className="w-full h-48 md:h-86 object-cover object-top"
+                      className="h-full w-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 md:via-background/80 to-background/30 md:to-transparent" />
                   </div>
                 )}
 
-                <div className="flex flex-col flex-1 p-6 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                <div className="relative z-10 flex flex-1 flex-col justify-end p-6 md:p-8">
+                  <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
+                    <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-primary transition-colors">
                       {project.name}
                     </h3>
-                    <div className="text-sm font-medium text-primary mb-2">
+                    <div className="mb-3 text-sm font-medium text-primary">
                       {project.role}
                     </div>
-                    <p className="text-muted-foreground text-sm mb-4">
+                    <p className="mb-4 line-clamp-3 text-gray-300">
                       {project.description}
                     </p>
 
-                    {/* Points list */}
+                    {/* Points list - Limited to 2 items to prevent overflow */}
                     {project.points && project.points.length > 0 && (
-                      <ul className="list-disc pl-4 space-y-1 mb-4">
-                        {project.points.map((point, i) => (
-                          <li key={i} className="text-muted-foreground text-xs">
+                      <ul className="mb-4 space-y-1">
+                        {project.points.slice(0, 2).map((point, i) => (
+                          <li key={i} className="text-xs text-gray-400">
                             {point}
                           </li>
                         ))}
@@ -88,7 +85,7 @@ export function Projects() {
                     )}
                   </div>
 
-                  <div className="mt-auto pt-4 flex gap-4">
+                  <div className="flex gap-4 pt-2">
                     {project.links &&
                       project.links.map((link) => {
                         const isGithub = link.includes("github");
@@ -98,12 +95,12 @@ export function Projects() {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                            className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
                           >
                             {isGithub ? (
-                              <Github size={18} />
+                              <Github size={20} />
                             ) : (
-                              <ExternalLink size={18} />
+                              <ExternalLink size={20} />
                             )}
                             <span>{isGithub ? "Code" : "Demo"}</span>
                           </a>
@@ -111,7 +108,7 @@ export function Projects() {
                       })}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -24,6 +24,12 @@
         "title": "Ranked Top 50 in AIS JUMP Thailand Hackathon 2025.",
         "description": "Developed Pun Plook, a solution enabling aging farmers to easily access IoT smart-farm features. Led the design and implementation planning of the Smart Pot system integrated with AIS IoT."
       }
+    ],
+    "certificates": [
+      "Huawei Cloud HCCDA-Tech Essentials",
+      "Introduction to Cybersecurity by Cisco Networking Academy",
+      "TypeScript Essential Training by Linkined",
+      "Prompt Engineering by Linkined"
     ]
   },
   "experience": [
@@ -65,6 +71,16 @@
       "image": "src/assets/ddd.png"
     },
     {
+      "name": "PDF Assistant Chat",
+      "description": "AI powered document analysis tool enabling natural language queries on PDF files using Retrieval Augmented Generation.",
+      "role": "Full-Stack Developer",
+      "links": ["https://github.com/NokiaTh131/PDF_Chat"],
+      "points": [
+        "Engineered an AI powered document analysis tool using LangChain and FAISS for RAG based retrieval, leveraging Groq's Llama 4 engine to deliver instant, context aware answers from PDF documents through an interactive Streamlit interface."
+      ],
+      "image": "src/assets/pdfchat.png"
+    },
+    {
       "name": "Exam Shedoo",
       "description": "A university exam scheduling and management platform with automated data synchronization.",
       "role": "Full-Stack Developer (Backend Lead)",
@@ -78,14 +94,14 @@
       "image": "src/assets/exam-shedoo.png"
     },
     {
-      "name": "PDF Chat (RAG Application)",
-      "description": "AI powered document analysis tool enabling natural language queries on PDF files using Retrieval Augmented Generation.",
-      "role": "Full-Stack Developer",
-      "links": ["https://github.com/NokiaTh131/PDF_Chat"],
+      "name": "UPBEAT (Strategic Game Engine)",
+      "description": "A multiplayer strategy game backend where players program their units using a custom scripting language.",
+      "role": "Backend Developer",
+      "links": ["https://github.com/NokiaTh131/newUPBEAT"],
       "points": [
-        "Engineered an AI powered document analysis tool using LangChain and FAISS for RAG based retrieval, leveraging Groq's Llama 4 engine to deliver instant, context aware answers from PDF documents through an interactive Streamlit interface."
+        "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real time game states and concurrent turn execution across a complex hexagonal territory system."
       ],
-      "image": "src/assets/pdfchat.png"
+      "image": "src/assets/upbeat.png"
     },
     {
       "name": "Medical Examination System",
@@ -123,16 +139,7 @@
       ],
       "image": "src/assets/draw2.png"
     },
-    {
-      "name": "UPBEAT (Strategic Game Engine)",
-      "description": "A multiplayer strategy game backend where players program their units using a custom scripting language.",
-      "role": "Backend Developer",
-      "links": ["https://github.com/NokiaTh131/newUPBEAT"],
-      "points": [
-        "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real time game states and concurrent turn execution across a complex hexagonal territory system."
-      ],
-      "image": "src/assets/upbeat.png"
-    },
+
     {
       "name": "Corne Keyboard Color Design",
       "description": "Interactive 2D/3D customization tool for Corne split mechanical keyboards color design.",

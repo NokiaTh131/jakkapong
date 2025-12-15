@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
-import portfolioData from '../data.json';
-import { PortfolioData } from '../types';
+import { motion } from "motion/react";
+import portfolioData from "../data.json";
+import { PortfolioData } from "../types";
 
 export function About() {
   const data: PortfolioData = portfolioData as unknown as PortfolioData;
@@ -28,10 +28,16 @@ export function About() {
             className="space-y-4 text-muted-foreground leading-relaxed"
           >
             {about.bio.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+              <li
+                className="flex items-start gap-2 text-sm text-muted-foreground"
+                key={index}
+              >
+                <span className="text-foreground mt-1">▸</span>
+                {paragraph}
+              </li>
             ))}
           </motion.div>
-          
+
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -39,15 +45,19 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-               <h3 className="text-xl font-semibold mb-4 text-foreground">Education</h3>
-               {about.education.map((edu, index) => (
-                 <div key={index} className="mb-4">
-                   <h4 className="font-medium text-foreground">{edu.school}</h4>
-                   <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                   <p className="text-sm text-muted-foreground">{edu.date} | {edu.location}</p>
-                   {edu.grade && <p className="text-sm text-muted-foreground">GPA: {edu.grade}</p>}
-                 </div>
-               ))}
+              <h3 className="text-xl font-semibold mb-4 text-foreground">
+                Achievements
+              </h3>
+              {about.achievements.map((achievement, index) => (
+                <div key={index} className="mb-4">
+                  <h4 className="font-medium text-foreground">
+                    {achievement.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {achievement.description}
+                  </p>
+                </div>
+              ))}
             </motion.div>
 
             <motion.div
@@ -56,13 +66,20 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-               <h3 className="text-xl font-semibold mb-4 text-foreground">Achievements</h3>
-               {about.achievements.map((achievement, index) => (
-                 <div key={index} className="mb-4">
-                   <h4 className="font-medium text-foreground">{achievement.title}</h4>
-                   <p className="text-sm text-muted-foreground">{achievement.description}</p>
-                 </div>
-               ))}
+              <h3 className="text-xl font-semibold mb-4 text-foreground">
+                Certificates
+              </h3>
+              <ul className="space-y-2">
+                {about.certificates.map((cert, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <span className="text-foreground mt-1">▸</span>
+                    <span>{cert}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </div>
         </div>

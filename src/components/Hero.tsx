@@ -51,7 +51,7 @@ export function Hero() {
   const imageSrc = getImagePath(profile.image);
 
   const scrollToProjects = () => {
-    const element = document.getElementById("projects");
+    const element = document.getElementById("about");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

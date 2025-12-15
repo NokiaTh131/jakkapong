@@ -31,8 +31,8 @@ export interface Achievement {
 
 export interface About {
   bio: string[];
-  education: Education[];
   achievements: Achievement[];
+  certificates: string[];
 }
 
 export interface WorkExperience {
