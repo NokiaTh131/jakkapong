@@ -21,6 +21,7 @@ export interface Education {
   grade: number;
   date: string;
   location: string;
+  logo?: string;
 }
 
 export interface Achievement {
@@ -34,14 +35,20 @@ export interface About {
   achievements: Achievement[];
 }
 
-export interface ExperienceItem {
+export interface WorkExperience {
   company: string;
   role: string;
   location: string;
   date: string;
   points: string[];
-  logo: string;
+  logo?: string;
 }
+
+export interface EducationWrapper {
+  education: Education[];
+}
+
+export type ExperienceItem = WorkExperience | EducationWrapper;
 
 export interface Project {
   name: string;

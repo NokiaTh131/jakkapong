@@ -19,15 +19,6 @@
       "I have a strong foundation in software development, ranging from Full-Stack web development to Machine Learning and DevOps. My technical expertise includes building high-traffic systems, implementing security best practices, and working with modern cloud technologies.",
       "Currently, news about services being hacked is on the rise. I foresaw this trend even as Vibe-Coding was becoming popular, which motivated me to choose the Cybersecurity track in my Computer Engineering major. This education has equipped me with the skills to identify vulnerabilities, manage security incidents, and prevent future attacks."
     ],
-    "education": [
-      {
-        "degree": "Bachelor of Engineering: Computer Engineering (Cybersecurity Track)",
-        "school": "Chiang Mai University",
-        "grade": 3.67,
-        "date": "2022-2026",
-        "location": "ChiangMai, ChiangMai"
-      }
-    ],
     "achievements": [
       {
         "title": "Ranked Top 50 in AIS JUMP Thailand Hackathon 2025.",
@@ -48,6 +39,18 @@
         "Perform penetration testing on hosting servers. Successfully identified critical vulnerabilities, authored a comprehensive remediation report, and collaborated with the team to patch security gaps and harden the infrastructure against attacks."
       ],
       "logo": "src/assets/logo_cas_cogniser.png"
+    },
+    {
+      "education": [
+        {
+          "degree": "Bachelor of Engineering: Computer Engineering (Cybersecurity Track)",
+          "school": "Chiang Mai University",
+          "grade": 3.67,
+          "date": "2022-2026",
+          "location": "ChiangMai, Thailand",
+          "logo": "src/assets/cmu.png"
+        }
+      ]
     }
   ],
   "projects": [
@@ -57,7 +60,7 @@
       "role": "Full-Stack Developer & ML Engineer",
       "links": [],
       "points": [
-        "Engineered a high-performance cybersecurity platform using Golang, Kafka, and ClickHouse to process 100M+ daily events with sub-second latency, achieving 89% accuracy in threat detection via a custom ML pipeline and streamlining SOC investigations through a real-time dashboard."
+        "Engineered a high-performance cybersecurity platform using Golang, Kafka, and ClickHouse to process 100M+ daily events with low latency, achieving 89% accuracy in threat detection via a custom ML pipeline and streamlining SOC investigations through a real-time dashboard."
       ],
       "image": "src/assets/ddd.png"
     },
@@ -70,17 +73,17 @@
         "https://github.com/maimeetang/exam-shedoo-frontend"
       ],
       "points": [
-        "Architected a comprehensive exam scheduling platform using Go (Fiber), PostgreSQL, and Redis, featuring automated data synchronization via Python scrapers and a responsive Next.js frontend that handles complex scheduling logic and document processing for university administration."
+        "Architected a comprehensive exam scheduling platform using Go Fiber, PostgreSQL, and Redis, featuring automated data synchronization via Python scrapers and a responsive Next.js frontend that handles complex scheduling logic and document processing for university administration."
       ],
       "image": "src/assets/exam-shedoo.png"
     },
     {
       "name": "PDF Chat (RAG Application)",
-      "description": "AI-powered document analysis tool enabling natural language queries on PDF files using Retrieval-Augmented Generation.",
+      "description": "AI powered document analysis tool enabling natural language queries on PDF files using Retrieval Augmented Generation.",
       "role": "Full-Stack Developer",
       "links": ["https://github.com/NokiaTh131/PDF_Chat"],
       "points": [
-        "Engineered an AI-powered document analysis tool using LangChain and FAISS for RAG-based retrieval, leveraging Groq's Llama-4 engine to deliver instant, context-aware answers from PDF documents through an interactive Streamlit interface."
+        "Engineered an AI powered document analysis tool using LangChain and FAISS for RAG based retrieval, leveraging Groq's Llama 4 engine to deliver instant, context aware answers from PDF documents through an interactive Streamlit interface."
       ],
       "image": "src/assets/pdfchat.png"
     },
@@ -99,24 +102,24 @@
     },
     {
       "name": "Project Workflow Application",
-      "description": "A developer-centric project management platform bridging task tracking with version control.",
+      "description": "A developer centric project management platform bridging task tracking with version control.",
       "role": "Full-Stack Developer",
       "links": [
         "https://github.com/NokiaTh131/ProjectFlow-backend",
         "https://github.com/NokiaTh131/ProjectFlow"
       ],
       "points": [
-        "Built a developer-centric project management tool bridging task tracking with version control, featuring a Next.js frontend with embedded code editing and a Spring Boot backend that synchronizes real-time development progress via the GitHub API."
+        "Built a developer centric project management tool bridging task tracking with version control, featuring a Next.js frontend with embedded code editing and a Spring Boot backend that synchronizes real time development progress via the GitHub API."
       ],
       "image": "src/assets/projectflow.png"
     },
     {
       "name": "Collaborative Whiteboard",
-      "description": "Real-time visual collaboration platform allowing users to draw, edit, and share whiteboards simultaneously.",
+      "description": "Real time visual collaboration platform allowing users to draw, edit, and share whiteboards simultaneously.",
       "role": "Full-Stack Developer",
       "links": ["https://github.com/NokiaTh131/whiteboard-with-collaboration"],
       "points": [
-        "Created a real-time collaborative whiteboard using NestJS and WebSockets for low-latency state synchronization, coupled with a Next.js frontend capable of rendering complex vector graphics and supporting secure multi-user interaction via MongoDB."
+        "Created a real time collaborative whiteboard using NestJS and WebSockets for low latency state synchronization, coupled with a Next.js frontend capable of rendering complex vector graphics and supporting secure multi user interaction via MongoDB."
       ],
       "image": "src/assets/draw2.png"
     },
@@ -126,7 +129,7 @@
       "role": "Backend Developer",
       "links": ["https://github.com/NokiaTh131/newUPBEAT"],
       "points": [
-        "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real-time game states and concurrent turn execution across a complex hexagonal territory system."
+        "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real time game states and concurrent turn execution across a complex hexagonal territory system."
       ],
       "image": "src/assets/upbeat.png"
     },
@@ -136,7 +139,7 @@
       "role": "Frontend Developer",
       "links": ["https://github.com/NokiaTh131/corne-design"],
       "points": [
-        "Constructed an immersive 3D product configurator using React Three Fiber, enabling users to customize and visualize mechanical keyboards in real-time with robust state management for theme application and export functionality."
+        "Constructed an immersive 3D product configurator using React Three Fiber, enabling users to customize and visualize mechanical keyboards in real time with robust state management for theme application and export functionality."
       ],
       "image": "src/assets/corne.png"
     }
