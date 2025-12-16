@@ -109,7 +109,7 @@ export function Contact() {
             {profile.email ? (
               <Button
                 size="lg"
-                className="w-full md:w-auto bg-primary cursor-pointer hover:bg-primary/70"
+                className="w-full md:w-auto cursor-pointer"
                 onClick={() =>
                   (window.location.href = `mailto:${profile.email}`)
                 }
