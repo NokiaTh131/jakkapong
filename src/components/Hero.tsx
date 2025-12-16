@@ -186,7 +186,7 @@ export function Hero() {
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>JobsDB Profile</p>
+                  <p>JobsDB</p>
                 </TooltipContent>
               </Tooltip>
             </motion.div>

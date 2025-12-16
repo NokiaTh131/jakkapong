@@ -3,6 +3,12 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 import portfolioData from "../data.json";
 import { PortfolioData } from "../types";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export function Contact() {
   const data: PortfolioData = portfolioData as unknown as PortfolioData;
@@ -60,35 +66,60 @@ export function Contact() {
                 Connect with me
               </div>
               <div className="flex gap-4">
-                <a
-                  href={profile.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github size={20} className="text-foreground" />
-                </a>
-                <a
-                  href={profile.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} className="text-foreground" />
-                </a>
-                <a
-                  href={profile.socials.jobsdb}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center"
-                  aria-label="JobsDB"
-                >
-                  <span className="font-bold text-xs text-foreground">
-                    JobsDB
-                  </span>
-                </a>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={profile.socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <Github size={20} className="text-foreground" />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>GitHub</p>
+                    </TooltipContent>
+                  </Tooltip>
+
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={profile.socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin size={20} className="text-foreground" />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>LinkedIn</p>
+                    </TooltipContent>
+                  </Tooltip>
+
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={profile.socials.jobsdb}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center"
+                        aria-label="JobsDB"
+                      >
+                        <span className="font-bold text-xs text-foreground">
+                          JobsDB
+                        </span>
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>JobsDB</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
           </motion.div>
