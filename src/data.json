@@ -71,6 +71,16 @@
       "image": "src/assets/ddd.png"
     },
     {
+      "name": "Trav AI",
+      "description": "A specialized Thailand Tourist Guide Chatbot that uses a RAG approach to answer questions based on guidebooks.",
+      "role": "Full-Stack Developer",
+      "links": ["https://github.com/NokiaTh131/trav_ai"],
+      "points": [
+        "Developed a Retrieval-Augmented Generation (RAG) chatbot using Memvid and LangChain to provide accurate Thailand travel information from PDF guidebooks, featuring strict source citation and entity-aware storage for high-fidelity retrieval."
+      ],
+      "image": "src/assets/travai.png"
+    },
+    {
       "name": "PDF Assistant Chat",
       "description": "AI powered document analysis tool enabling natural language queries on PDF files using Retrieval Augmented Generation.",
       "role": "Full-Stack Developer",
@@ -186,7 +196,8 @@
           "NestJs",
           "Node.js",
           "Go Fiber",
-          "Kafka"
+          "Kafka",
+          "LangChain"
         ],
         "logos": [
           "src/assets/springboot.svg",
@@ -196,7 +207,8 @@
           "src/assets/nestjs.svg",
           "src/assets/nodejs.svg",
           "src/assets/go.svg",
-          "src/assets/kafka.svg"
+          "src/assets/kafka.svg",
+          "src/assets/langchain.svg"
         ]
       },
       {

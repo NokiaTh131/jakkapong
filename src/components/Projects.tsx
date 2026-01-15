@@ -28,7 +28,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-12">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,14 +40,14 @@ export function Projects() {
           <div className="w-12 h-1 bg-foreground mb-12" />
         </motion.div>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-3">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-3">
           {projects.map((project) => {
             const imageSrc = getImagePath(project.image);
 
             return (
               <div
                 key={project.name}
-                className="group relative flex flex-col h-[500px] md:h-[600px] w-full overflow-hidden rounded-xl border border-white/10 bg-card"
+                className="group relative flex flex-col h-[500px] md:h-[500px] w-full overflow-hidden rounded-xl border border-white/10 bg-card"
               >
                 {/* Background Image */}
                 {imageSrc && (
@@ -66,23 +66,13 @@ export function Projects() {
                     <h3 className="mb-2 text-2xl font-bold text-white">
                       {project.name}
                     </h3>
-                    <div className="mb-3 text-sm font-medium text-primary">
-                      {project.role}
-                    </div>
+
                     <p className="mb-4 line-clamp-3 text-gray-300">
                       {project.description}
                     </p>
-
-                    {/* Points list - Limited to 2 items to prevent overflow */}
-                    {project.points && project.points.length > 0 && (
-                      <ul className="mb-4 space-y-1">
-                        {project.points.slice(0, 2).map((point, i) => (
-                          <li key={i} className="text-xs text-gray-400">
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    <div className="mb-3 text-sm font-medium text-primary">
+                      {project.role}
+                    </div>
                   </div>
 
                   <div className="flex gap-4 pt-2">
