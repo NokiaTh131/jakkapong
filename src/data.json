@@ -107,7 +107,10 @@
       "name": "UPBEAT (Strategic Game Engine)",
       "description": "A multiplayer strategy game backend where players program their units using a custom scripting language.",
       "role": "Backend Developer",
-      "links": ["https://github.com/NokiaTh131/newUPBEAT"],
+      "links": [
+        "https://github.com/NokiaTh131/UPBEAT-backend",
+        "https://github.com/NokiaTh131/UPBEAT-frontend"
+      ],
       "points": [
         "Designed a multiplayer strategy game backend in Spring Boot with a custom DSL interpreter for programmable unit control, managing real time game states and concurrent turn execution across a complex hexagonal territory system."
       ],
